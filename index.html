@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mood Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.5s ease;
+            background: #efefd2;
+        }
+        .container {
+            max-width: 400px;
+            height: 60px;
+            
+            margin: 100px auto;
+            padding: 70px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 80px;
+            margin-top: auto;
+            font-size: 38px;
+        }
+        .mood-buttons {
+            display: flex;
+            justify-content: space-around;
+            gap: 25px;
+        }
+        .mood {
+            font-size: 24px;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        .mood:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How are you feeling today?</h1>
+        <div class="mood-buttons">
+            <button class="mood" onclick="changeMood('happy')" style="background: #FFD1DC;">😊 Happy</button>
+            <button class="mood" onclick="changeMood('sad')" style="background: #afe0ff;">😢 Sad</button>
+            <button class="mood" onclick="changeMood('excited')" style="background: #daadff;">🤩 Excited</button>
+            <button class="mood" onclick="changeMood('calm')" style="background: #B2F2BB;">😌 Calm</button>
+        </div>
+    </div>
+    
+    <script>
+        function changeMood(mood) {
+            const moods = {
+                happy: '#FFD1DC',
+                sad: '#afe0ff',
+                excited: '#daadff',
+                calm: '#B2F2BB'
+            };
+            document.body.style.background = moods[mood];
+        }
+    </script>
+</body>
+</html>
